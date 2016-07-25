@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
 	@IBOutlet weak var nameTextField: UITextField!
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var photoImageView: UIImageView!
+	@IBOutlet weak var ratingControl: RatingControl!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -42,10 +43,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
 	}
 
 	// MARK: Actions
-	@IBAction func setDefaultLabelText(sender: UIButton) {
-		nameLabel.text = "Default Text"
-	}
-
 	@IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
 		nameTextField.resignFirstResponder()
 		let imagePickerController = UIImagePickerController()
