@@ -16,6 +16,7 @@ class MealTableViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		navigationItem.leftBarButtonItem = editButtonItem()
 		loadSampleMeals()
 	}
 
@@ -58,11 +59,47 @@ class MealTableViewController: UITableViewController {
 		return cell
 	}
 
+	override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+		if editingStyle == .Delete {
+			meals.removeAtIndex(indexPath.row)
+			tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+		}
+		else if editingStyle == .Insert {
+
+		}
+	}
+
+	override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+		return true
+	}
+
+	// MARK: Navigation
+
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "ShowDetail" {
+			let mealViewController = segue.destinationViewController as! MealViewController
+			if let selectedMealCell = sender as? MealTableViewCell {
+				let indexPath = tableView.indexPathForCell(selectedMealCell)
+				let selectedMeal = meals[indexPath!.row]
+				mealViewController.meal = selectedMeal
+			}
+		}
+		else if segue.identifier == "AddItem" {
+			print("Adding new meal.")
+		}
+	}
+
 	@IBAction func unwindToMealList(sender: UIStoryboardSegue) {
 		if let sourceViewController = sender.sourceViewController as? MealViewController, meal = sourceViewController.meal {
-			let newIndexPath = NSIndexPath(forRow: meals.count, inSection: 0)
-			meals.append(meal)
-			tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+			if let selectedIndexPath = tableView.indexPathForSelectedRow {
+				meals[selectedIndexPath.row] = meal
+				tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+			}
+			else {
+				let newIndexPath = NSIndexPath(forRow: meals.count, inSection: 0)
+				meals.append(meal)
+				tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+			}
 		}
 	}
 }

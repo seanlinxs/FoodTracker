@@ -21,6 +21,14 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		nameTextField.delegate = self
+
+		if let meal = meal {
+			navigationItem.title = meal.name
+			nameTextField.text = meal.name
+			ratingControl.rating = meal.rating
+			photoImageView.image = meal.photo
+		}
+
 		checkValidMealName()
 	}
 
@@ -45,6 +53,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
 	}
 
 	// MARK: UIImagePickerControllerDelegate
+
 	func imagePickerControllerDidCancel(picker: UIImagePickerController) {
 		dismissViewControllerAnimated(true, completion: nil)
 	}
@@ -56,8 +65,16 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
 	}
 
 	// MARK: Navigation
+
 	@IBAction func cancel(sender: UIBarButtonItem) {
-		dismissViewControllerAnimated(true, completion: nil)
+		let isPresentingInAddMealMode = presentingViewController is UINavigationController
+
+		if isPresentingInAddMealMode {
+			dismissViewControllerAnimated(true, completion: nil)
+		}
+		else {
+			navigationController!.popViewControllerAnimated(true)
+		}
 	}
 
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
