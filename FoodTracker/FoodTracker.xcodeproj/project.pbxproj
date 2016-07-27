@@ -16,10 +16,11 @@
 		A409D00A1D43C22D005497CF /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A409D0091D43C22D005497CF /* RatingControl.swift */; };
 		A409D00C1D45B4EB005497CF /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A409D00B1D45B4EB005497CF /* Meal.swift */; };
 		A409D00D1D45B4EB005497CF /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A409D00B1D45B4EB005497CF /* Meal.swift */; };
-		A409D0121D46E3E0005497CF /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = A409D0111D46E3E0005497CF /* Cartfile */; };
-		A409D0131D46E3E0005497CF /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = A409D0111D46E3E0005497CF /* Cartfile */; };
-		A4DF4E9F1D4705B900D53CCB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4DF4E9E1D4705B900D53CCB /* Nimble.framework */; };
-		A4DF4EA21D47088700D53CCB /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A4DF4EA11D47088700D53CCB /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A40F4BB01D4854AF00AF4CA7 /* Support in Resources */ = {isa = PBXBuildFile; fileRef = A40F4BAF1D4854AF00AF4CA7 /* Support */; };
+		A40F4BB31D48579900AF4CA7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40F4BB11D48579900AF4CA7 /* Realm.framework */; };
+		A40F4BB41D48579900AF4CA7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40F4BB21D48579900AF4CA7 /* RealmSwift.framework */; };
+		A40F4BBD1D48594300AF4CA7 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40F4BBC1D48594300AF4CA7 /* Nimble.framework */; };
+		A40F4BBF1D48594D00AF4CA7 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A40F4BBE1D48594D00AF4CA7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A4DF4EA51D4726A900D53CCB /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF4EA41D4726A900D53CCB /* MealTableViewCell.swift */; };
 		A4DF4EA71D472F6300D53CCB /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF4EA61D472F6300D53CCB /* MealTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -41,7 +42,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A4DF4EA21D47088700D53CCB /* Nimble.framework in CopyFiles */,
+				A40F4BBF1D48594D00AF4CA7 /* Nimble.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,9 +61,13 @@
 		A409D0001D41D225005497CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A409D0091D43C22D005497CF /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		A409D00B1D45B4EB005497CF /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
-		A409D0111D46E3E0005497CF /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
-		A4DF4E9E1D4705B900D53CCB /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = FoodTrackerTests/Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		A4DF4EA11D47088700D53CCB /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = FoodTrackerTests/Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		A40F4BAF1D4854AF00AF4CA7 /* Support */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Support; sourceTree = "<group>"; };
+		A40F4BB11D48579900AF4CA7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Support/Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		A40F4BB21D48579900AF4CA7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Support/Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		A40F4BB81D48591700AF4CA7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Support/Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		A40F4BB91D48591700AF4CA7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Support/Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		A40F4BBC1D48594300AF4CA7 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Support/Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		A40F4BBE1D48594D00AF4CA7 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Support/Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		A4DF4EA41D4726A900D53CCB /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 		A4DF4EA61D472F6300D53CCB /* MealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A40F4BB31D48579900AF4CA7 /* Realm.framework in Frameworks */,
+				A40F4BB41D48579900AF4CA7 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4DF4E9F1D4705B900D53CCB /* Nimble.framework in Frameworks */,
+				A40F4BBD1D48594300AF4CA7 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +96,10 @@
 		A409CFDD1D41D225005497CF = {
 			isa = PBXGroup;
 			children = (
+				A40F4BBE1D48594D00AF4CA7 /* Nimble.framework */,
+				A40F4BB81D48591700AF4CA7 /* Realm.framework */,
+				A40F4BB91D48591700AF4CA7 /* RealmSwift.framework */,
+				A40F4BAF1D4854AF00AF4CA7 /* Support */,
 				A4DF4EA31D47239600D53CCB /* Frameworks */,
 				A409CFE81D41D225005497CF /* FoodTracker */,
 				A409CFFD1D41D225005497CF /* FoodTrackerTests */,
@@ -127,7 +138,6 @@
 			children = (
 				A409CFFE1D41D225005497CF /* FoodTrackerTests.swift */,
 				A409D0001D41D225005497CF /* Info.plist */,
-				A409D0111D46E3E0005497CF /* Cartfile */,
 			);
 			path = FoodTrackerTests;
 			sourceTree = "<group>";
@@ -135,8 +145,9 @@
 		A4DF4EA31D47239600D53CCB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A4DF4EA11D47088700D53CCB /* Nimble.framework */,
-				A4DF4E9E1D4705B900D53CCB /* Nimble.framework */,
+				A40F4BBC1D48594300AF4CA7 /* Nimble.framework */,
+				A40F4BB11D48579900AF4CA7 /* Realm.framework */,
+				A40F4BB21D48579900AF4CA7 /* RealmSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,6 +162,7 @@
 				A409CFE21D41D225005497CF /* Sources */,
 				A409CFE31D41D225005497CF /* Frameworks */,
 				A409CFE41D41D225005497CF /* Resources */,
+				A40F4BB51D4857C800AF4CA7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -224,9 +236,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A40F4BB01D4854AF00AF4CA7 /* Support in Resources */,
 				A409CFF41D41D225005497CF /* LaunchScreen.storyboard in Resources */,
 				A409CFF11D41D225005497CF /* Assets.xcassets in Resources */,
-				A409D0121D46E3E0005497CF /* Cartfile in Resources */,
 				A409CFEF1D41D225005497CF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,11 +247,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A409D0131D46E3E0005497CF /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A40F4BB51D4857C800AF4CA7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Support/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Support/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A409CFE21D41D225005497CF /* Sources */ = {
@@ -385,6 +414,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Support/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FoodTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -400,6 +433,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Support/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FoodTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -416,6 +453,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FoodTrackerTests/Carthage/Build/iOS/**",
+					"$(PROJECT_DIR)/Support/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = FoodTrackerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -432,6 +470,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FoodTrackerTests/Carthage/Build/iOS/**",
+					"$(PROJECT_DIR)/Support/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = FoodTrackerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

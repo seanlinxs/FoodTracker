@@ -65,4 +65,4 @@ fastlane/screenshots
 fastlane/test_output
 
 # Carthage
-FoodTracker/FoodTrackerTests/Carthage/
+FoodTracker/Support/Carthage/Checkouts/
