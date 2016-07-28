@@ -13,13 +13,9 @@ import RealmSwift
 
 class FoodTrackerSpec: XCTestCase {
 
-	let realm = try! Realm()
-
-	override func setUp() {
-		print("Realm Location:", realm.configuration.fileURL)
-	}
-
 	override func tearDown() {
+		let realm = try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "MyInMemoryRealm"))
+
 		try! realm.write {
 			realm.deleteAll()
 		}
@@ -35,17 +31,17 @@ class FoodTrackerSpec: XCTestCase {
 	}
 
 	func testMealStorageObjects() {
-		let realm = try! Realm()
-		let noodle = Ingredient(value: ["name": "Noodle", "unit": "g", "quantity": 100.0])
-		let vegetables = Ingredient(value: ["name": "Vegitables", "unit": "g", "quantity": 200.0])
-		let vegetableNoodle = MealStorageObject()
-		vegetableNoodle.name = "Vegetable Noodle"
-		vegetableNoodle.rating = 5
-		vegetableNoodle.photo = nil
-		vegetableNoodle.ingredients.appendContentsOf([noodle, vegetables])
+		let realm = try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "MyInMemoryRealm"))
 
 		try! realm.write {
-			realm.add(vegetableNoodle)
+			realm.create(MealStorageObject.self, value: MealStorageObject(value: [
+				"name": "Vegetable Noodle",
+				"rating": 5,
+				"ingredients": [
+					["Noodle", "g", 100.0],
+					["Vegitables", "g", 200.0]
+				]
+				]), update: true)
 		}
 
 		let meals = realm.objects(MealStorageObject.self)
@@ -67,10 +63,48 @@ class FoodTrackerSpec: XCTestCase {
 
 		// update and load again
 		try! realm.write {
-			theNoodle?.name = "Rice Noodle"
+			//theNoodle?.name = "Rice Noodle"
+			theNoodle?.setValue("Rice Noodle", forKey: "name")
 		}
 
 		let theSameMeals = realm.objects(MealStorageObject.self)
 		expect(theSameMeals.first?.ingredients.first?.name).to(equal("Rice Noodle"))
+
+		try! realm.write {
+			realm.delete(theSameMeals)
+		}
+
+		// load again
+		let noMeals = realm.objects(MealStorageObject.self)
+		expect(noMeals).notTo(beNil())
+		expect(noMeals.count).to(equal(0))
+	}
+
+	func testQueries() {
+		let realm = try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "MyInMemoryRealm"))
+
+		try! realm.write {
+			realm.create(MealStorageObject.self, value:
+				MealStorageObject(value: ["name": "Meal One", "rating": 2, "ingredients": [["Ingredient One", "ml", 100.0]]]), update: true)
+			realm.create(MealStorageObject.self, value:
+				MealStorageObject(value: ["name": "Meal Two", "rating": 4, "ingredients": [["Ingredient Two", "g", 1000.0]]]), update: true)
+		}
+
+		let meals = realm.objects(MealStorageObject.self)
+		expect(meals).notTo(beNil())
+		expect(meals.count).to(equal(2))
+
+		// Test query using predicate string
+		let mealOne = meals.filter("name = 'Meal One' AND rating = 2")
+		expect(mealOne).notTo(beNil())
+		expect(mealOne.count).to(equal(1))
+		expect(mealOne.first?.name).to(equal("Meal One"))
+
+		// Test query using NSPredicate
+		let predicate = NSPredicate(format: "name = %@ AND rating = %i", "Meal Two", 4)
+		let mealTwo = meals.filter(predicate)
+		expect(mealTwo).notTo(beNil())
+		expect(mealTwo.count).to(equal(1))
+		expect(mealTwo.first?.name).to(equal("Meal Two"))
 	}
 }
