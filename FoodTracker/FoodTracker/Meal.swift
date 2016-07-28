@@ -7,6 +7,32 @@
 //
 
 import UIKit
+import RealmSwift
+
+class Ingredient: Object {
+	dynamic var name = ""
+	dynamic var unit = ""
+	dynamic var quantity = 0.0
+
+	override static func indexedProperties() -> [String] {
+		return ["name"]
+	}
+}
+
+class MealStorageObject: Object {
+	dynamic var name = ""
+	dynamic var rating = 0
+	dynamic var photo: NSData?
+	let ingredients = List<Ingredient>()
+
+	override static func indexedProperties() -> [String] {
+		return ["name", "rating"]
+	}
+
+	override static func primaryKey() -> String? {
+		return "name"
+	}
+}
 
 class Meal: NSObject, NSCoding {
 	// MARK: Properties

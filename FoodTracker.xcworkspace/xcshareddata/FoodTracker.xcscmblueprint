@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F470E11A0C2C1087B1F595D4206F838666F04B70",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F470E11A0C2C1087B1F595D4206F838666F04B70" : 0,
+    "9FB1FDDBA011002795A1FF5BD3CABFA2F79E6A59" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3A7925BE-9A02-4FDC-A8B5-8C9798847376",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F470E11A0C2C1087B1F595D4206F838666F04B70" : "FoodTracker\/",
+    "9FB1FDDBA011002795A1FF5BD3CABFA2F79E6A59" : "..\/realm-cocoa"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FoodTracker",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FoodTracker.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:realm\/realm-cocoa.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9FB1FDDBA011002795A1FF5BD3CABFA2F79E6A59"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:seanlinxs\/FoodTracker.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F470E11A0C2C1087B1F595D4206F838666F04B70"
+    }
+  ]
+}

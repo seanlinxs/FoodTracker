@@ -15,7 +15,6 @@
 		A409CFFF1D41D225005497CF /* FoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A409CFFE1D41D225005497CF /* FoodTrackerTests.swift */; };
 		A409D00A1D43C22D005497CF /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A409D0091D43C22D005497CF /* RatingControl.swift */; };
 		A409D00C1D45B4EB005497CF /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A409D00B1D45B4EB005497CF /* Meal.swift */; };
-		A409D00D1D45B4EB005497CF /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A409D00B1D45B4EB005497CF /* Meal.swift */; };
 		A40F4BB01D4854AF00AF4CA7 /* Support in Resources */ = {isa = PBXBuildFile; fileRef = A40F4BAF1D4854AF00AF4CA7 /* Support */; };
 		A40F4BB31D48579900AF4CA7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40F4BB11D48579900AF4CA7 /* Realm.framework */; };
 		A40F4BB41D48579900AF4CA7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40F4BB21D48579900AF4CA7 /* RealmSwift.framework */; };
@@ -288,7 +287,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A409D00D1D45B4EB005497CF /* Meal.swift in Sources */,
 				A409CFFF1D41D225005497CF /* FoodTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
