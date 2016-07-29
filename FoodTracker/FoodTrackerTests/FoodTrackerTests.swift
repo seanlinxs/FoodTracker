@@ -107,4 +107,34 @@ class FoodTrackerSpec: XCTestCase {
 		expect(mealTwo.count).to(equal(1))
 		expect(mealTwo.first?.name).to(equal("Meal Two"))
 	}
+
+	func testSorting() {
+		let meal1 = MealStorageObject(value: ["name": "meal1", "rating": 2])
+		let meal2 = MealStorageObject(value: ["name": "meal2", "rating": 2])
+		let meal3 = MealStorageObject(value: ["name": "meal11","rating": 5])
+
+		let realm = try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "MyInMemoryRealm"))
+		try! realm.write {
+			realm.add(meal1)
+			realm.add(meal2)
+			realm.add(meal3)
+		}
+
+		// Single sorting field
+		let sortedMealsOne = realm.objects(MealStorageObject.self).sorted("name", ascending: true)
+		expect(sortedMealsOne).notTo(beNil())
+		expect(sortedMealsOne.count).to(equal(3))
+		expect(sortedMealsOne[0].name).to(equal("meal1"))
+		expect(sortedMealsOne[1].name).to(equal("meal11"))
+		expect(sortedMealsOne[2].name).to(equal("meal2"))
+
+		// Sorting chain
+		let sortingProperties = [SortDescriptor(property: "rating", ascending: true), SortDescriptor(property: "name", ascending: true)]
+		let sortedMealsTwo = realm.objects(MealStorageObject.self).sorted(sortingProperties)
+		expect(sortedMealsTwo).notTo(beNil())
+		expect(sortedMealsTwo.count).to(equal(3))
+		expect(sortedMealsTwo[0].name).to(equal("meal1"))
+		expect(sortedMealsTwo[1].name).to(equal("meal2"))
+		expect(sortedMealsTwo[2].name).to(equal("meal11"))
+	}
 }
