@@ -21,6 +21,7 @@
 		A40F4BBD1D48594300AF4CA7 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40F4BBC1D48594300AF4CA7 /* Nimble.framework */; };
 		A40F4BBF1D48594D00AF4CA7 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A40F4BBE1D48594D00AF4CA7 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A4147B3C1D5050DB00E657C7 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4147B3B1D5050DB00E657C7 /* Person.swift */; };
+		A46028951D506A9C00B52D73 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46028941D506A9C00B52D73 /* Dog.swift */; };
 		A4DF4EA51D4726A900D53CCB /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF4EA41D4726A900D53CCB /* MealTableViewCell.swift */; };
 		A4DF4EA71D472F6300D53CCB /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DF4EA61D472F6300D53CCB /* MealTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		A40F4BBC1D48594300AF4CA7 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Support/Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		A40F4BBE1D48594D00AF4CA7 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Support/Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		A4147B3B1D5050DB00E657C7 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		A46028941D506A9C00B52D73 /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		A4DF4EA41D4726A900D53CCB /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 		A4DF4EA61D472F6300D53CCB /* MealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 				A409CFF21D41D225005497CF /* LaunchScreen.storyboard */,
 				A409CFF51D41D225005497CF /* Info.plist */,
 				A4147B3B1D5050DB00E657C7 /* Person.swift */,
+				A46028941D506A9C00B52D73 /* Dog.swift */,
 			);
 			path = FoodTracker;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				A409CFEA1D41D225005497CF /* AppDelegate.swift in Sources */,
 				A4147B3C1D5050DB00E657C7 /* Person.swift in Sources */,
 				A4DF4EA71D472F6300D53CCB /* MealTableViewController.swift in Sources */,
+				A46028951D506A9C00B52D73 /* Dog.swift in Sources */,
 				A4DF4EA51D4726A900D53CCB /* MealTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
