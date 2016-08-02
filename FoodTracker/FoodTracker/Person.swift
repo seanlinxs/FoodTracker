@@ -11,9 +11,9 @@ import RealmSwift
 
 class Person: Object {
 	dynamic var employeeId = ""
-	dynamic var firstName = ""
-	dynamic var lastName = ""
+	dynamic var fullName = ""
 	dynamic var age = 0
+	let dogs = List<Dog>()
 
 	override static func primaryKey() -> String? {
 		return "employeeId"

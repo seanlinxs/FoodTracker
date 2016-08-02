@@ -16,13 +16,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+		let migrationBlock: MigrationBlock = { migration, oldSchemaVersion in
+			if oldSchemaVersion < 1 {
+				print("\(oldSchemaVersion) -> 1")
+				migration.enumerate(Person.className()) { oldObject, newObject in
+					let firstName = oldObject!["firstName"] as! String
+					let lastName = oldObject!["lastName"] as! String
+					newObject!["fullName"] = "\(firstName) \(lastName)"
+				}
+			}
+
+			if oldSchemaVersion < 2 {
+				print("\(oldSchemaVersion) -> 2")
+			}
+
+			print("Migration completed.")
+		}
+
+		Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 2, migrationBlock: migrationBlock)
+
 		let realm = try! Realm()
 
 		// Debugging purpose
 		print(realm.configuration.fileURL!)
 
+		//		// Create object in v0
+		//		try! realm.write {
+		//			realm.create(Person.self, value: ["employeeId": "A168837", "firstName": "Sean", "lastName": "Lin", "age": 25], update: true)
+		//		}
+
+		//		// Create object in v1
+		//		try! realm.write {
+		//			realm.create(Person.self, value: ["employeeId": "A168838", "fullName": "John Woo", "age": 35], update: true)
+		//		}
+
+		//			// Adding new model does't need migration, only changing does
+		//		try! realm.write {
+		//			let nimo = Dog(value: ["name": "Nimo", "age": 1])
+		//			realm.add(nimo)
+		//		}
+
+		// Create object in v2
 		try! realm.write {
-			realm.create(Person.self, value: ["employeeId": "A168837", "firstName": "Sean", "lastName": "Lin", "age": 25], update: true)
+			let george = Person(value: ["employeeId": "A168839", "fullName": "George Lee", "age": 22])
+			realm.add(george)
+
+			if let nimo = realm.objects(Dog.self).filter("name = 'Nimo' AND age = 1").first {
+				george.dogs.append(nimo)
+			}
 		}
 
 		return true
@@ -49,6 +90,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func applicationWillTerminate(application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
-
-
+	
+	
 }
