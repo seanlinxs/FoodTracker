@@ -30,10 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				print("\(oldSchemaVersion) -> 2")
 			}
 
+			if oldSchemaVersion < 3 {
+				print("\(oldSchemaVersion) -> 3")
+			}
+
 			print("Migration completed.")
 		}
 
-		Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 2, migrationBlock: migrationBlock)
+		Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 3, migrationBlock: migrationBlock)
 
 		let realm = try! Realm()
 
@@ -56,14 +60,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		//			realm.add(nimo)
 		//		}
 
-		// Create object in v2
-		try! realm.write {
-			let george = Person(value: ["employeeId": "A168839", "fullName": "George Lee", "age": 22])
-			realm.add(george)
+//		// Create object in v2
+//		try! realm.write {
+//			let george = Person(value: ["employeeId": "A168839", "fullName": "George Lee", "age": 22])
+//			realm.add(george)
+//
+//			if let nimo = realm.objects(Dog.self).filter("name = 'Nimo' AND age = 1").first {
+//				george.dogs.append(nimo)
+//			}
+//		}
 
-			if let nimo = realm.objects(Dog.self).filter("name = 'Nimo' AND age = 1").first {
-				george.dogs.append(nimo)
-			}
+		try! realm.write {
+			realm.create(Person.self, value: ["employeeId": "A168840", "fullName": "Lydia Von", "age": 28, "email": "lvon@example.com"], update: true)
 		}
 
 		return true

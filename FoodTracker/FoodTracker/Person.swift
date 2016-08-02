@@ -14,6 +14,7 @@ class Person: Object {
 	dynamic var fullName = ""
 	dynamic var age = 0
 	let dogs = List<Dog>()
+	dynamic var email = ""
 
 	override static func primaryKey() -> String? {
 		return "employeeId"
