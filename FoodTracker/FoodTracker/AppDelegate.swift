@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-		// Override point for customization after application launch.
+		let realm = try! Realm()
+
+		// Debugging purpose
+		print(realm.configuration.fileURL!)
+
+		try! realm.write {
+			realm.create(Person.self, value: ["employeeId": "A168837", "firstName": "Sean", "lastName": "Lin", "age": 25], update: true)
+		}
+
 		return true
 	}
 
@@ -43,4 +52,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
