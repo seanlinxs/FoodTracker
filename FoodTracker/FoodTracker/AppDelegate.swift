@@ -60,19 +60,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		//			realm.add(nimo)
 		//		}
 
-//		// Create object in v2
-//		try! realm.write {
-//			let george = Person(value: ["employeeId": "A168839", "fullName": "George Lee", "age": 22])
-//			realm.add(george)
-//
-//			if let nimo = realm.objects(Dog.self).filter("name = 'Nimo' AND age = 1").first {
-//				george.dogs.append(nimo)
-//			}
-//		}
+		//		// Create object in v2
+		//		try! realm.write {
+		//			let george = Person(value: ["employeeId": "A168839", "fullName": "George Lee", "age": 22])
+		//			realm.add(george)
+		//
+		//			if let nimo = realm.objects(Dog.self).filter("name = 'Nimo' AND age = 1").first {
+		//				george.dogs.append(nimo)
+		//			}
+		//		}
 
-		try! realm.write {
-			realm.create(Person.self, value: ["employeeId": "A168840", "fullName": "Lydia Von", "age": 28, "email": "lvon@example.com"], update: true)
-		}
+		//		// Cerate object in v3
+		//		try! realm.write {
+		//			realm.create(Person.self, value: ["employeeId": "A168840", "fullName": "Lydia Von", "age": 28, "email": "lvon@example.com"], update: true)
+		//		}
 
 		return true
 	}
@@ -98,6 +99,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func applicationWillTerminate(application: UIApplication) {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
-	
 	
 }
